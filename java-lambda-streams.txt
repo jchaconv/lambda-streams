@@ -1,23 +1,82 @@
 
-En el package lambda
+Lambda expression: Is an implementation of an interface.
+* To use lambda the interface should have only one abstract method and nothing else.
+
+Clase 1 - How to create a lambda function:
+
+En el package lambda:
 
 Se puede hacer la implementación de una interfaz haciendo uso de varias líneas
 Se necesitaría otra implementación similar para otra funcionalidad
-Para evitar la verbosidad existen las funciones lambda. (Ver el ejemplo #1)  TestLambda.java
+Para evitar la verbosidad existen las funciones lambda. (Ver el ejemplo #1)  TestMain.java
+Lambda reconoce el tipo de dato según lo que se haya declarado en la interfaz, por eso es opcional poner ese tipo de dato.
+
+***********************************************************************
+
+Clase 2 - SAM:
+
+Ver GreetingService.java
+SAM: single abstract method.
+En java8 se inventó la anotación @FunctionalInterface para indicar que la interfaz iba a ser usada para expresiones lambda y
+debía mantenerse con SAM. (Para que no agreguen otros métodos)
+
+***********************************************************************
+
+Clase 3 - Single line vs Multi line Lambda
+
+Se puede escribir funciones de una sola línea o también con un body de más líneas, para eso se usa {}
+Ver TestMain.java
+
+***********************************************************************
+
+Clase 4 - Returning values from lambda
+
+Ver TestMain2.java se puede obviar el return , tuve que hacer otra interfaz que retorne un String
+
+***********************************************************************
+
+Clase 5 - Functional Programming
+
+Key concepts:
+- Pure function
+- Function as first-class object
+- High-order functions
+
+- A way of building software by using pure functions and by avoiding share state & side-effects
+    (Ver ejemplo en TestMain2.java)
+    * share state: a variable being accessed by more than 1 function
+    * side effect: function modifies that variable
+    * Esto hace que la funcion no sea pura(share state y side effect)
+
+ - Inspired in math functions. Ex:
+    * f(x) = x + 3
+    * (x) => x + 3
+
+ - Getting consistent output for the given input.
+   The output is completely depending on the input. Ex:
+
+   * (x) => x + 3 + y   ---> what is y? it's a variable that depends on another function. In this case, this is not a pure function.
 
 
+***********************************************************************
+
+Clase 6 - Function As first class objects
+
+ability to assign a function to a variable - having a ref of function
+
+Así como se puede tener una referencia en POO:
+Dog d = new Dog();
+
+En lambdas también, la referencia sería la que hemos estado viendo:
+
+GreetingService2 g2 = (n) -> n.toUpperCase();
+
+* En este caso g2 es una variable que no está ejecutando nada aún, solo almacena.
 
 
+***********************************************************************
 
-
-
-
-
-
-
-
-
-
+Clase 7 - High order function
 
 
 
