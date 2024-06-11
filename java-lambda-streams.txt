@@ -1,0 +1,29 @@
+
+En el package lambda
+
+Se puede hacer la implementación de una interfaz haciendo uso de varias líneas
+Se necesitaría otra implementación similar para otra funcionalidad
+Para evitar la verbosidad existen las funciones lambda. (Ver el ejemplo #1)  TestLambda.java
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
