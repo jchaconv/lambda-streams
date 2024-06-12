@@ -1,4 +1,8 @@
 
+Repo del proyecto:
+https://github.com/jchaconv/lambda-streams
+
+
 Lambda expression: Is an implementation of an interface.
 * To use lambda the interface should have only one abstract method and nothing else.
 
@@ -78,6 +82,24 @@ GreetingService2 g2 = (n) -> n.toUpperCase();
 
 Clase 7 - High order function
 
+Es un función que recibe como parámetro una función lambda(comportamiento que debe ejecutarse)
+Ver en TestMain2.java el método test()
+
+En este caso la función tiene la data y le tenemos que decir qué hacer con ella
+En POO es al revés, le damos la data y la función tiene el comportamiento.
+
+***********************************************************************
+
+Clase 8 - When lambda is executed
+
+Ver TestMain3.java
+* Como lo puse en el ejemplo, el bloque de código en lambda no es ejecutable sino que solo estoy
+pasando el comportamiento.
+* A diferencia de POO lo que se está mandando a la high order function no es otra función o método como tal
+sino el comportamiento.
+
+
+***********************************************************************
 
 
 
@@ -86,3 +108,40 @@ Clase 7 - High order function
 
 
 
+***********************************************************************
+
+
+
+
+
+
+
+
+***********************************************************************
+
+
+
+
+
+
+
+
+***********************************************************************
+
+
+
+
+
+
+
+
+***********************************************************************
+
+
+
+
+
+
+
+
+***********************************************************************

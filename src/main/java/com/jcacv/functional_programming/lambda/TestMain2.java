@@ -41,7 +41,29 @@ public class TestMain2 {
 
         System.out.println(g4.greet("Julio"));
 
+        // ####################################################
+        // High Order Function
+        System.out.println("##################################");
+        convertToUpperCase("julio chacon");
+        test((n) -> n.toUpperCase());
+        test((n) -> n.toUpperCase() + " " + n.length());
     }
+
+    //EN POO: le doy la data y la función tiene el comportamiento
+    private static String convertToUpperCase(String name) {
+        String returnedString = name.toUpperCase();
+        System.out.println(returnedString);
+        return returnedString;
+    }
+
+    //High order function: le doy el comportamiento y la función o método tiene la data
+    //esa es la diferencia que tiene la programación funcional
+    private static void test(GreetingService2 greetingService2) {
+        String returnedString = greetingService2.greet("babydonthurtme");
+        System.out.println(returnedString);
+    }
+
+
 
 
 
