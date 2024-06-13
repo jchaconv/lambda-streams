@@ -100,19 +100,27 @@ sino el comportamiento.
 
 
 ***********************************************************************
+*Nota: De aquí en adelante los ejemplos estarán en los archivos correspondientes al número de clase.
 
+Clase 9 - High Order functions part 2
 
-
-
-
-
-
+Una High Order function recibe una función como parámetro pero también puede retornar una función.
+Ver el ejemplo en Lec09HighOrderFunctions
 
 ***********************************************************************
 
+Clase 10 - Method References part 1, 2, 3 y 4
 
+Sirve para abreviar una función lambda cuando
+-el objeto de entrada simplemente pasa a otro método
+-se trata de one line statement
+-se invoca a un método del objeto incluso sin pasarle ese objeto (Ex String::toUpperCase)
 
+Ver Lec10MethodReferences.java
 
+Se creó la functional interface
+-StringOperations.java con el método accept
+-BooleanOperations.java con el método accept
 
 
 
