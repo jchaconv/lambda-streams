@@ -1,4 +1,4 @@
-package com.jcacv.functional_programming.lambda;
+package com.jcacv.functional_programming.sec01lambda;
 
 @FunctionalInterface
 public interface GreetingService {

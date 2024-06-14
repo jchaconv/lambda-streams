@@ -1,4 +1,4 @@
-package com.jcacv.functional_programming.lambda;
+package com.jcacv.functional_programming.sec01lambda;
 
 import java.util.ArrayList;
 import java.util.List;

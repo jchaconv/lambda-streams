@@ -1,4 +1,4 @@
-package com.jcacv.functional_programming.lambda.methodreference;
+package com.jcacv.functional_programming.sec01lambda.methodreference;
 
 @FunctionalInterface
 public interface StringOperations {

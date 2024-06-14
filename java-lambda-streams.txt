@@ -111,36 +111,58 @@ Ver el ejemplo en Lec09HighOrderFunctions
 
 Clase 10 - Method References part 1, 2, 3 y 4
 
-Sirve para abreviar una función lambda cuando
+Sirve para abreviar una función lambda cuando:
+
 -el objeto de entrada simplemente pasa a otro método
 -se trata de one line statement
 -se invoca a un método del objeto incluso sin pasarle ese objeto (Ex String::toUpperCase)
+-tengo dos parametros y paso el 2do a un método del primero (Ex String::concat)
+-se usa el parametro en metodos de otro objeto (list::add) sin embargo esto no es pure function porque depende
+ de un objeto externo a la función
 
 Ver Lec10MethodReferences.java
 
-Se creó la functional interface
+Se creó la functional interface:
+
 -StringOperations.java con el método accept
+-StringOperations2.java con el método accept
+-VoidOperations.java con el método accept
 -BooleanOperations.java con el método accept
 
-
-
-
+***********************************************************************
+                    SEC02 - FUNCTIONAL INTERFACES
 ***********************************************************************
 
+-------------------------------------------------------------------------------------------------------------------
+    NAME        |   INPUT TYPE  |    RETURN TYPE   |  METHOD  |    FUNCTIONAL COMPOSITION    |      BI TYPE       |
+------------------------------------------------------------------------------------------------------------------|
+                |               |                  |          |                              |                    |
+* Supplier<T>   |     N/A       |       T          |   get    |            N/A               |        N/A         |
+                |               |                  |          |                              |                    |
+------------------------------------------------------------------------------------------------------------------|
+                |               |                  |          |                              |                    |
+* Consumer<T>   |      T        |      void        |  accept  |       andThen(Consumer<T>)   |  BIConsumer<T,R>   |
+                |               |                  |          |                              |                    |
+------------------------------------------------------------------------------------------------------------------|
+                |               |                  |          |        and(Predicate)        |                    |
+* Predicate<T>  |      T        |    boolean       |   test   |        or(Predicate)         |  BIPredicate<T,R>  |
+                |               |                  |          |          negate()            |                    |
+------------------------------------------------------------------------------------------------------------------|
+                |               |                  |          |                              |                    |
+* Function<T,R> |        T      |    R             |  apply   |       andThen(Function)      |  BIFunction<T,U,R> |
+                |               |                  |          |       compose(Function)      |                    |
+                |               |                  |          |                              |                    |
+------------------------------------------------------------------------------------------------------------------|
 
 
+Clase 11 - Supplier
 
 
+* No acepta parámetro de entrada y utiliza get() para obtener el resultado (Ej: Obtener decimal)
 
+- Se creó Supplier01.java
 
-
-***********************************************************************
-
-
-
-
-
-
+Supplier in test automation framework
 
 
 ***********************************************************************
