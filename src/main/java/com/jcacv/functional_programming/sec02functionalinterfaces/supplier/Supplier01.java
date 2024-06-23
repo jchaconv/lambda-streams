@@ -1,4 +1,4 @@
-package com.jcacv.functional_programming.sec02functionalinterfaces;
+package com.jcacv.functional_programming.sec02functionalinterfaces.supplier;
 
 import java.util.function.Supplier;
 

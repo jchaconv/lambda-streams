@@ -149,7 +149,7 @@ Se creó la functional interface:
                 |               |                  |          |          negate()            |                    |
 ------------------------------------------------------------------------------------------------------------------|
                 |               |                  |          |                              |                    |
-* Function<T,R> |        T      |    R             |  apply   |       andThen(Function)      |  BIFunction<T,U,R> |
+* Function<T,R> |      T        |        R         |  apply   |       andThen(Function)      |  BIFunction<T,U,R> |
                 |               |                  |          |       compose(Function)      |                    |
                 |               |                  |          |                              |                    |
 ------------------------------------------------------------------------------------------------------------------|
@@ -163,12 +163,21 @@ Clase 11 - Supplier
 - Se creó Supplier01.java
 
 Supplier in test automation framework
+- Se creó el package Supplier
 
+- El test es una prueba que requiere tener webdrivers descargados(por ahora los omito, queda comentada la clase test)
 
 ***********************************************************************
 
+Clase 12 - Consumer
 
+Se usa cuando se necesita hacer alguna operación con un objeto sin esperar un retorno
 
+- Se crearon las clases:
+    Consumer01.java --> Ejemplo básico
+    Consumer02.java --> Consumer chaining para casos donde se necesite juntar la lógica de dos consumers.
+                        se realiza con andThen (se trata de Functional Composition, ver el cuadro arriba)
+                        De esta manera podemos switchear fácilmente el comportamiento.
 
 
 
