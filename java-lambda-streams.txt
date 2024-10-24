@@ -153,6 +153,14 @@ Se creó la functional interface:
                 |               |                  |          |       compose(Function)      |                    |
                 |               |                  |          |                              |                    |
 ------------------------------------------------------------------------------------------------------------------|
+                |               |                  |          |                              |                    |
+* Runnable      |      N/A      |        N/A       |   run    |            N/A               |        N/A         |
+                |               |                  |          |                              |                    |
+------------------------------------------------------------------------------------------------------------------|
+                |               |                  |          |                              |                    |
+* Callable<T>   |      N/A      |        T         |   call   |            N/A               |        N/A         |
+                |               |                  |          |                              |                    |
+------------------------------------------------------------------------------------------------------------------|
 
 
 Clase 11 - Supplier
@@ -192,22 +200,43 @@ Lo mismo que consumer solo que recibe dos parámetros. Ver BiConsumer01.java
 
 Clase 14 - Predicate
 
+Usar para condicionales. Ver Predicate01.java
+Métodos: test, and, or, negate
 
-
-***********************************************************************
-
-
-
-
-***********************************************************************
-
-
-
+Para usar varias reglas crear la clase Rules y llamar así:
+  Rules.get().forEach(rule -> elements.removeIf(rule));
 
 ***********************************************************************
 
+Clase 15 - Function
 
+Sirve para transformaciones. Primero va el tipo de dato de entrada y luego el de salida.
+Pueden ser iguales. Function<String, Integer>
+Se puede ejecutar las funciones en cadena siempre y cuando el tipo de valor de retorno de la
+primera sea el valor de entrada de la segunda.
 
+ * andThen: para ejecutar en cadena
+ * compose: ejecuta primero la función dentro de compose() como si fuera en orden inverso
+            (no de fuera hacia dentro sino de dentro hacia afuera)
+
+a andThen b : a -> b
+a compose b : b -> a
+
+Ver Function01.java
+
+***********************************************************************
+
+Clase 16 - Runnable
+
+Se usa con hilos. Ver Runnable01.java
+
+***********************************************************************
+
+Clase 17 - Callable
+
+Es como el Supplier solo que el método debe tener "throws Exception".
+Usa el método call()
+Ver Callable01.java
 
 ***********************************************************************
 
