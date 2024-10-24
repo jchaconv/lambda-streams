@@ -4,7 +4,7 @@ https://github.com/jchaconv/lambda-streams
 
 
 Lambda expression: Is an implementation of an interface.
-* To use lambda the interface should have only one abstract method and nothing else.
+* To use lambda the interface must have only one abstract method and nothing else.
 
 Clase 1 - How to create a lambda function:
 
@@ -179,8 +179,52 @@ Se usa cuando se necesita hacer alguna operación con un objeto sin esperar un r
                         se realiza con andThen (se trata de Functional Composition, ver el cuadro arriba)
                         De esta manera podemos switchear fácilmente el comportamiento.
 
+* Tener en cuenta que solo se puede hace lambda chaining de Consumers del mismo tipo.
+  Ex: String -> String o Integer -> Integer
+
+***********************************************************************
+
+Clase 13 - BiConsumer
+
+Lo mismo que consumer solo que recibe dos parámetros. Ver BiConsumer01.java
+
+***********************************************************************
+
+Clase 14 - Predicate
+
+
+
+***********************************************************************
 
 
 
 
 ***********************************************************************
+
+
+
+
+***********************************************************************
+
+
+
+
+***********************************************************************
+
+
+
+
+***********************************************************************
+
+
+
+
+***********************************************************************
+
+
+
+
+***********************************************************************
+
+
+
