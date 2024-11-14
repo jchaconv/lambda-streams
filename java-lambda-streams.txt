@@ -6,6 +6,9 @@ https://github.com/jchaconv/lambda-streams
 Lambda expression: Is an implementation of an interface.
 * To use lambda the interface must have only one abstract method and nothing else.
 
+programacion funcional: facil de leer, facil de mantener
+
+
 Clase 1 - How to create a lambda function:
 
 En el package lambda:
@@ -240,8 +243,219 @@ Ver Callable01.java
 
 ***********************************************************************
 
+Clase 18 - Stream API
+
+Ver Lec18Stream.java
+
+Esta feature permite que se realicen operaciones en el medio del flujo
+Usé:
+    - filter
+    - limit
+    - map
+    - forEach
 
 
+***********************************************************************
+
+Stream Operations
+
+    Type:
+
+        * Intermediate: Returns new streams, lazy(works only if there is a terminal operator)
+            Si no conectas el terminal operator no se ejecuta nada en el pipeline.
+
+
+              Operation   |  Input Data Type:     |          Example
+            ----------------------------------------------------------------
+            - filter      |   Predicate<T>        | filter(i -> i % 2 == 0)
+            * map         |   Function<T, R>      | map(s -> s.toUpperCase())           -> it can changes the data type
+            - limit       |   long                | limit(3)
+            - skip        |   long                | skip(3)
+            - peek        |   Consumer<T>         | peek(i -> System.out.println(i))
+            - distinct    |   N/A                 | distinct()
+            - sorted      |   Comparator          | sorted(Comparator.naturalOrder())
+                          |                       | sorted(Comparator.reverseOrder())
+            - flatMap     |   Function<T, R>      |
+
+        * Terminal: Stream is consumed, cannot be reused. You can have only one of these.
+            - forEach
+            - collect
+                - to a list: .collect(Collectors.toList())
+                - to a set: .collect(Collectors.toSet())    => No duplicates
+                - join all: .collect(Collectors.joining()) || .collect(Collectors.joining(","))
+                - to a map: .collect(Collectors.groupingBy(...))
+            - count
+            - min
+            - max
+            - findAny
+            - anyMatch
+            - noneMatch
+
+        * Optional<T>
+
+***********************************************************************
+
+Clase 19 - Sort
+
+Sirve para ordenar con el método sorted()
+Hay que tener cuidado de dónde se pone exactamente en el stream
+porque puede variar el comportamiento. Ver Lec19Sort.java
+
+
+***********************************************************************
+
+Clase 20 - Peek
+
+Just for debugging. It receives a Consumer.
+Ver Lec20Peek.java
+
+***********************************************************************
+
+Clase 21 - Skip
+
+Sirve para omitir los primeros valores(dependiendo del número proporcionado) del stream.
+El resultado va a depender de dónde ponga el .skip
+.skip(8)    -> omito los 8 primeros valores
+
+Ver Lec21Skip.java
+
+***********************************************************************
+
+Clase 22 - More Filter and Map
+
+Se pueden añadir varios filter y map en el stream.
+Ver Lec22MoreFilterAndMap.java
+
+
+***********************************************************************
+
+Clase 23 - FlatMap
+
+Cuando se quiere trabajar con List of List
+Ver Lec23FlatMap.java
+
+***********************************************************************
+
+Clase 24 - Count
+
+Sirve para contar pero por qué no usar simplemente size?
+porque Count lo podemos combinar con otro intermediate operator en el stream
+Ver Lec24Count.java
+
+***********************************************************************
+
+Clase 25 - findFirst y Optional
+
+findFirst retorna un Optional
+.isPresent para validaciones
+.get() para obtener el valor
+
+Ver Lec25FindFirstAndOptional.java
+
+
+***********************************************************************
+
+Clase 26 - Min y Max
+
+Ambos retornan un Optional y reciben un Comparator
+
+Ver Lec26MinAndMax.java
+
+***********************************************************************
+
+Clase 27 - AnyMatch & NoneMatch
+
+Recibe un Predicate y retorna un boolean
+
+Ver Lec27AnyMatchNoneMatch.java
+
+***********************************************************************
+
+Clase 28 - Collect
+
+toList() crea una nueva lista
+
+toSet() crea un Set eliminando duplicados
+
+joining() puede concatenar valores y agregar un delimitador
+
+groupingBy() puede agrupar según lo que se necesite, creo que solo numero y letra
+
+Ver Lec28Collect.java
+
+
+***********************************************************************
+
+Clase 29 - Optional
+
+Para evitar los NullPointerException podemos usar Optional y sus métodos
+isPresent, get son de mucha utilidad
+
+Ver Lec29Optional.java
+
+***********************************************************************
+
+Clase 30 - Comparator
+
+Se puede usar Comparator.comparing para hallar objetos en cierto orden
+se utiliza en min, max
+
+
+Ver compare.Student.java y TestMain
+
+***********************************************************************
+
+Clase 31 - Reduce
+
+Se puede usar para sumatoria de numeros. el primero se utiliza como acumulador
+y el otro es el valor de la lista.
+
+hay dos enfoques, el reduce para pocos valores y mapToInt para mayor cantidad
+de valores.
+
+Ver Lec31Reduce
+
+
+***********************************************************************
+
+Clase 32 - Primitive Stream
+
+primitives y wrappers
+
+mapToInt
+mapToLong       => para poder usar sum() average()
+mapToDouble
+
+para evitar errores de compilación
+
+long z = 5;
+int a = z;   => esto da error porque long pesa más
+
+int a = (int) z => esto si funcionaría
+
+int sum = numbers.stream()
+                .mapToLong(a -> a) //LongStream
+                .mapToInt(a -> (int) a) //IntStream  aquí se debe poner así y funcionaría
+                .sum();
+
+***********************************************************************
+
+Clase 33 - IntStream for loop (rangeClose y range)
+
+range(1, 10) => solo del 1 hasta el 9 descarta el 10
+
+rangeClosed(1, 10) => del 1 hasta el 10 si incluye el 10
+
+Ver Lec31Reduce.java (al final)
+
+
+***********************************************************************
+
+abstract classes: sirven para ser heredadas por subclases
+abstrac methods: requieren subclases para ser implementados
+
+se usa abstract porque provee un general template o base class
+que permite specific implementations in subclasses. allows polymorphism.
 
 ***********************************************************************
 
@@ -254,6 +468,3 @@ Ver Callable01.java
 
 
 ***********************************************************************
-
-
-
